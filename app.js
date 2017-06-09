@@ -22,14 +22,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.all('*', function(req, res, next){
-  if( req.headers.origin == 'http://localhost:8085' || req.headers.origin == 'http://localhost:8082' || req.headers.origin == 'http://localhost:80'  ) {
+  // if( req.headers.origin == 'http://localhost:8085' || req.headers.origin == 'http://localhost:8082' || req.headers.origin == 'http://localhost:80'  ) {
     res.header("Access-Control-Allow-Origin", req.headers.origin);
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
     res.header("X-Powered-By",' 3.2.1');
     res.header("Content-Type", "application/json;charset=utf-8");
-  }
+  // }
   next();
 });
 var common = require('./routes/common');

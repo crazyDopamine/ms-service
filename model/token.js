@@ -1,5 +1,5 @@
 var redis = require('redis');
-var client = redis.createClient(6379,'127.0.0.1',{auth_pass:'dw2587758'});
+var client = redis.createClient(6379,'127.0.0.1');
 var models = require('../model/models');
 
 var globalKey={
