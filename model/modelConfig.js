@@ -27,7 +27,7 @@ var msg = {
             allowNull: false
         }
     }
-};
+}; 
 var user = {
     field: {
         account: {
