@@ -11,6 +11,11 @@ var msg = {
             defaultValue: 0,
             allowNull: false
         },
+        description:{
+            type: Sequelize.STRING,
+            defaultValue: '',
+            allowNull: false
+        },
         content: {
             type: Sequelize.TEXT,
             defaultValue: '',

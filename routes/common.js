@@ -58,6 +58,7 @@ var initMudule = function(model){
         var pageSize = params.pageSize?params.pageSize:global.pageSize;
         var page = params.page?params.page:1;
         var config = {
+            order:[['updated_at','DESC']],
             offset:(page-1)*pageSize,limit:pageSize,
             where:Object.assign({},params.where?JSON.parse(params.where):{})
         };
@@ -95,7 +96,6 @@ var initMudule = function(model){
     router.post('/'+model+'/insert', function (req, res, next) {
         var params = getParams(req);
         models.getDB().transaction({},function(t){
-            console.log(params)
             var config = {transaction:t};
             if(modelConfig[model].api&&modelConfig[model].api.insert&&modelConfig[model].api.insert.queryConfig){
                 Object.assign(config,modelConfig[model].api.insert.queryConfig);
@@ -119,7 +119,6 @@ var initMudule = function(model){
             if(modelConfig[model].api&&modelConfig[model].api.update&&modelConfig[model].api.update.queryConfig){
                 Object.assign(config,modelConfig[model].api.update.queryConfig);
             }
-            console.log(params)
             data.update(params,config).then(function(data){
                 success(res,data);
             })

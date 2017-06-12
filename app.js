@@ -42,6 +42,9 @@ app.use('/user', userRouter);
 // app.use('/learnHistory', learnHistoryRouter);
 var dictionaryRouter = require('./routes/dictionary');
 app.use('/dictionary', dictionaryRouter);
+var fileRouter = require('./routes/file');
+app.use('/file', fileRouter);
+app.use("/file",express.static(__dirname + "/file"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

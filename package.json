@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "~1.15.1",
     "cheerio": "^0.22.0",
+    "connect-multiparty": "^2.0.0",
     "cookie-parser": "~1.4.3",
     "crypto": "0.0.3",
     "debug": "~2.2.0",
@@ -17,7 +18,7 @@
     "redis": "^2.6.3",
     "sequelize": "^3.24.3"
   },
-  "devDependencies":{},
+  "devDependencies": {},
   "scripts": {
     "redis": "/Users/dongwei/Documents/tool/redis-3.2.6/src/redis-server /Users/dongwei/Documents/tool/redis-3.2.6/redis.conf",
     "start": "supervisor app.js"
